@@ -3,10 +3,7 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Random;
-import java.util.Scanner;
 
-import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
-import static javax.swing.JOptionPane.showMessageDialog;
 
 
 public class GameMap extends JPanel {
@@ -116,14 +113,10 @@ public GameMap(){
 
             }
         }
-        //repaint();
+
         if (isGameOver){
             showMessageGameOver(g);
-
-
         }
-
-
     }
 
     private void update(MouseEvent e) {
@@ -155,9 +148,6 @@ public GameMap(){
         }
         if (gameCheck(DOT_HUMAN, STATE_WIN_HUMAN)) return;
 
-
-
-        //repaint();
         if (gameCheck(DOT_AI, STATE_WIN_AI)) return;
         repaint();
     }
@@ -178,7 +168,7 @@ public GameMap(){
         repaint();
         this.gameMode=gameMode;
         count=1;
-            System.out.printf("new game with: %dx%d sized field, mode: %d and win length %d",fieldSize,fieldSize,gameMode,winLength);
+            //System.out.printf("new game with: %dx%d sized field, mode: %d and win length %d",fieldSize,fieldSize,gameMode,winLength);
         System.out.println();
 }
 
@@ -197,7 +187,6 @@ public GameMap(){
                 repaint();
                 scoreAI++;
 
-                //System.out.println(s);
                 return true;
             }
         }
